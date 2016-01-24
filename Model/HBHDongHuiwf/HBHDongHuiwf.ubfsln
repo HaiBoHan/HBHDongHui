@@ -6,6 +6,7 @@
     <Item id="8e728d8e-939b-443a-9c81-07d76cd2c154" include="HBHDongHuiUIList\HBHDongHuiUIList.ubfuiproj" />
     <Item id="ab934a98-bc56-4a8e-8bd4-6b3362a23a50" include="HBHDongHuiUIListBP\HBHDongHuiUIListBP.ubfbpproj" />
     <Item id="4c741ed0-e479-4b3d-bc71-5d9a4895a53f" include="HBHQuerywf\HBHQuerywf.ubfqueryproj" />
+    <Item id="98acd163-ed88-4406-9f03-aa3a3490fddf" include="HBHDongHuiBPwf\HBHDongHuiBPwf.ubfbpproj" />
   </ItemGroup>
   <ServiceGroupInfo id="93e9891e-dcf3-4d7c-aa4a-7c8bff47545a" name="HBHDongHuiwf" displayName="HBHDongHuiwf" description="" help="" fullPath="D:\U9Cust\UFIDA\U9Proj\U9AppCode\U9.VOB.Apps.Cus\CusApp\HBHDongHui\Model\HBHDongHuiwf\HBHDongHuiwf.ubfsln" applicationID="" />
 </Solution>
