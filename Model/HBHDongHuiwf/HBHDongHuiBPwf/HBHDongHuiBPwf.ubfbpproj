@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project id="2bc5cbf2-f4a7-43df-8c2b-99f661383c7b" name="HBHDongHuiBPwf" displayName="HBHDongHuiBPwf" description="" help="" type="BP" assemblyName="U9.VOB.Cus.HBHDongHui.HBHDongHuiBPwf" mapProject="" resourceName="" projectVersion="Normal">
+  <SourceControl />
+  <ItemGroup>
+    <Item id="5f942f15-e71d-49ed-8b69-19ed43e2f87f" name="HBHIssueBP.ubfbp" displayName="HBHDongHuiBPwf.ubfbp" description="" help="" include="HBHIssueBP.ubfbp" type="BE" />
+  </ItemGroup>
+</Project>

@@ -1,4 +1,4 @@
-<View ID="a03cdb71-d70b-4cf4-96d2-6ea1e7f28ac7" ChildLabelWidth="56" ChildRefWidth="20" DisplayName="组织机构" DisplayNameIndexStr="" DisplayNameResourceID="" DisplaySrcType="Custom" DisplaySrcUIFieldID="" DisplaySrcUIViewID="" GridBottomMargin="5" GridColumnCount="1" GridColumnSpace="24" GridLeftMargin="0" GridRightMargin="0" GridRowCount="3" GridRowSpace="10" GridTopMargin="0" Height="504" IsMainForm="True" LayoutType="GridBag" Name="OrgUIListBListUIForm" Namespace="OrgUIListBListUIModel" QueryInfo="QueryInfo" TabStop="False" TemplateCode="UI_ListForm_HasCheckBox" TemplateType="CustomTemplate" UIModelID="043a99d7-378b-478b-b419-730d0015d10c" URI=".UI_列表Form带CheckBoxWebPart" UserType="ForQuery" ViewID="4983" Width="992" X="10" Y="10">
+<View ID="a03cdb71-d70b-4cf4-96d2-6ea1e7f28ac7" ChildLabelWidth="56" ChildRefWidth="20" DisplayName="组织机构" DisplayNameIndexStr="" DisplayNameResourceID="" DisplaySrcType="Custom" DisplaySrcUIFieldID="" DisplaySrcUIViewID="" GridBottomMargin="5" GridColumnCount="1" GridColumnSpace="24" GridLeftMargin="0" GridRightMargin="0" GridRowCount="3" GridRowSpace="10" GridTopMargin="0" Height="370" IsMainForm="True" LayoutType="GridBag" Name="OrgUIListBListUIForm" Namespace="OrgUIListBListUIModel" QueryInfo="QueryInfo" TabStop="False" TemplateCode="UI_ListForm_HasCheckBox" TemplateType="CustomTemplate" UIModelID="043a99d7-378b-478b-b419-730d0015d10c" URI=".UI_列表Form带CheckBoxWebPart" UserType="ForQuery" ViewID="4983" Width="410" X="10" Y="10">
   <Columns>
     <Column Fixed="False" Name="Column0" Type="Title" Width="405" />
   </Columns>
@@ -12,7 +12,7 @@
   <Card ID="e9009a10-a3b3-4517-8c08-7d2e8ee881d4" ChildLabelWidth="60" ChildRefWidth="20" FunctionBar="FunctionBar" GridBottomMargin="2" GridColumnCount="10" GridColumnSpace="0" GridHeight="1" GridLeftMargin="10" GridRightMargin="10" GridRowCount="1" GridRowSpace="5" GridTopMargin="3" GridWidth="1" GridX="0" GridY="2" Height="25" LayoutType="GridBag" Name="Card0" TabIndex="3" TabStop="False" Width="405" X="0" Y="331">
     <Columns>
       <Column Fixed="True" Name="Column0" Type="Title" Width="50" />
-      <Column Fixed="True" Name="Column1" Type="Spacing" Width="10" />
+      <Column Fixed="True" Name="Column1" Type="Title" Width="10" />
       <Column Fixed="True" Name="Column19" Width="70" />
       <Column Fixed="True" Name="Column18" Type="Spacing" Width="10" />
       <Column Fixed="False" Name="Column16" Width="80" />
@@ -47,6 +47,11 @@
       </Events>
     </Button>
     <Button ID="93893156-f7c2-456a-a6dd-dea7db1c3bb8" AccessKey="" DisplayName="" DisplayNameResourceID="020a5365-8f12-4970-b8df-17ce3ae60a68" DisplaySrcType="PublicResource" GridHeight="1" GridWidth="1" GridX="8" GridY="0" Height="20" Name="BtnClose" TabIndex="5" TabStop="True" Width="70" X="320" Y="3">
+      <Events>
+        <Event EnableEvent="True" EventType="PostBack" IsDataBinding="True" IsDataCollect="True" Name="Click" Parameter="" Template="" />
+      </Events>
+    </Button>
+    <Button ID="94ae7bf4-f6c9-477b-82f2-0c931d7fa730" AccessKey="" DisplayName="" DisplayNameResourceID="0467218f-229b-4954-b2d4-3c5976467f76" DisplaySrcType="PublicResource" GridHeight="1" GridWidth="1" GridX="0" GridY="0" Height="20" Name="BtnDelete" TabIndex="6" TabStop="True" Visible="False" Width="10" X="60" Y="3">
       <Events>
         <Event EnableEvent="True" EventType="PostBack" IsDataBinding="True" IsDataCollect="True" Name="Click" Parameter="" Template="" />
       </Events>

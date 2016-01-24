@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceGroup>
+  <ServiceGroupInfo id="93e9891e-dcf3-4d7c-aa4a-7c8bff47545a" name="HBHDongHuiwf" displayName="HBHDongHuiwf" description="" help="" fullPath="D:\U9Cust\UFIDA\U9Proj\U9AppCode\U9.VOB.Apps.Cus\CusApp\HBHDongHui\Model\HBHDongHuiwf\HBHDongHuiwf.sg" applicationID="" />
+  <AssemblyGroup>
+    <Assembly ID="7bd63f4a-ffdc-47ae-b8e6-c0dd50f6d413" name="U9.VOB.Cus.HBHDongHui.HBHDongHuiBEwf" type="BE" path="" />
+    <Assembly ID="9560f288-ea76-47c1-8b27-c63c8dae3039" name="U9.VOB.Cus.HBHDongHui.HBHDongHuiUIList" type="UI" path="" />
+    <Assembly ID="30267de2-b409-4d91-92d5-8d3bab657e44" name="U9.VOB.Cus.HBHDongHui.HBHDongHuiUIListBP" type="BP" path="" />
+    <Assembly ID="740a4cf3-9b7c-4f25-94e5-1f398525029c" name="HBHQuerywf" type="" path="" />
+    <Assembly ID="2bc5cbf2-f4a7-43df-8c2b-99f661383c7b" name="U9.VOB.Cus.HBHDongHui.HBHDongHuiBPwf" type="BP" path="" />
+  </AssemblyGroup>
+</ServiceGroup>
