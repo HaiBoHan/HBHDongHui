@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project id="740a4cf3-9b7c-4f25-94e5-1f398525029c" name="HBHQuerywf" displayName="HBHQuerywf" description="" help="" type="" assemblyName="HBHQuerywf" mapProject="" resourceName="" projectVersion="Normal">
+  <Imports>
+    <Import id="d633379a-eefa-40a8-a6ad-fb32f64e07c8" name="HBHDongHuiUIList" displayName="HBHDongHuiUIList" description="" help="" componentid="9560f288-ea76-47c1-8b27-c63c8dae3039" path="..\HBHDongHuiUIList\HBHDongHuiUIList.ubfuiproj" type="UI" isRuntime="False" />
+    <Import id="c44c9b90-2346-44d4-80f9-590a810c0204" name="HBHDongHuiUIListBP" displayName="HBHDongHuiUIListBP" description="" help="" componentid="30267de2-b409-4d91-92d5-8d3bab657e44" path="..\HBHDongHuiUIListBP\HBHDongHuiUIListBP.ubfbpproj" type="BP" isRuntime="False" />
+  </Imports>
+  <SourceControl />
+  <ItemGroup>
+    <Item id="e6eb4d3a-dd29-4c34-8dcf-751252b6640f" name="HBHQuerywf.ubfquery" displayName="HBHQuerywf.ubfquery" description="" help="" include="HBHQuerywf.ubfquery" type="" />
+  </ItemGroup>
+</Project>

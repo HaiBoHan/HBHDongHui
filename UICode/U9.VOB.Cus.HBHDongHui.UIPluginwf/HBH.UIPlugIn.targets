@@ -23,6 +23,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\UBFV30\U9.VOB.Product.Component\Unconfiged\Component\UFIDA.U9.Cust.HBH.Common.CommonLibary.dll</HintPath>
     </Reference>
+    <Reference Include="U9.VOB.HBHCommon.HBHCommonUI.WebPart, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\UBFV30\U9.VOB.Product.WebPart\HBHCommon\U9.VOB.HBHCommon.HBHCommonUI.WebPart.dll</HintPath>
+    </Reference>
     <Reference Include="UFIDA.U9.FI.AR.ARMaintenanceUI.WebPart">
       <HintPath>..\..\..\..\..\..\UBFV30\U9.VOB.Product.WebPart\UFIDA.U9.FI.AR.ARMaintenanceUI.WebPart.dll</HintPath>
     </Reference>

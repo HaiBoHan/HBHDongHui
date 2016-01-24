@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<QueryComponent id="5b1c949e-d6fc-4302-b5a8-e654041ec09e" name="HBHQuerywf" displayName="HBHQuerywf" description="" help="" QueryType="List" QueryURI="24f36e1b-81cc-49b3-8807-8bf06c14fc00" QuerySourceFullName="UFIDA.U9.Base.Organization.Organization" UIViewDragType="DragUp" RefInfoLoadType="Cache">
+  <BasicInfo id="c6fbe4e3-147d-42e6-bfd7-be841a0c0656" name="" displayName="" description="" help="" RefToken="" RootDescContextValue="" FilterTabVisible="True" ColumnTabVisible="True" SortTabVisible="True" FilterExpandLevel="3" ColumnExpandLevel="3" SortExpandLevel="3" />
+  <BPRefInfo id="1ab1c7f1-3e07-49bb-9687-c10e45576db6" name="" displayName="" description="" help="" ProjectID="" ProjectPath="" BPItemID="" BPOperationID="" DTOID="" BPAgentDll="" BPAgentProxy="" />
+  <UIRefInfo id="90aa89bc-ea04-4160-a45e-43c14c8c0962" name="" displayName="" description="" help="" ProjectID="" ProjectPath="" UIModelItemID="328f75e5-2fa8-4cd3-b1a8-9046d28b114f" UIFormItemID="65a32b41-fc93-4d44-94fb-d8cef465615f" UIModelID="043a99d7-378b-478b-b419-730d0015d10c" />
+  <FilterDefines>
+    <FilterDefine id="71ecbd30-aa23-4618-bb93-9cfef79a5850" name="Code" displayName="Code" description="" help="" ParentName="" Alias="Code" IsFixed="False" IsAllowBlank="True" Visible="True" DescFieldContextValue="" FilterNodeType="Item" DateDisplayType="" RaiseChangedEvent="False" IsBuildWhereStr="True" OperatorList="" />
+    <FilterDefine id="099a8fce-019d-41f7-8500-4815819a7111" name="Name" displayName="Name" description="" help="" ParentName="" Alias="Name" IsFixed="False" IsAllowBlank="True" Visible="True" DescFieldContextValue="" FilterNodeType="Item" DateDisplayType="" RaiseChangedEvent="False" IsBuildWhereStr="True" OperatorList="" />
+  </FilterDefines>
+  <ColumnDefines>
+    <ColumnDefine id="700d11fa-db07-4ecd-83ba-df05a595bd0e" name="Code" displayName="Code" description="" help="" ParentName="" Alias="Code" IsFixed="False" Visible="True" DescFieldContextValue="" ZeroIsEmpty="False" DateDisplayType="" Point="2" />
+    <ColumnDefine id="9bcc16cc-913f-4cc1-adf5-7334e13f8251" name="Name" displayName="Name" description="" help="" ParentName="" Alias="Name" IsFixed="False" Visible="True" DescFieldContextValue="" ZeroIsEmpty="False" DateDisplayType="" Point="2" />
+  </ColumnDefines>
+  <SortDefines>
+    <SortDefine id="3c553b15-1a04-4bba-b46d-8ef9ecd85098" name="Code" displayName="" description="" help="" ParentName="" Alias="Code" IsFixed="False" Visible="True" DescFieldContextValue="" />
+    <SortDefine id="14804b4a-7aa4-4537-ae62-0fd2d36322be" name="Name" displayName="" description="" help="" ParentName="" Alias="Name" IsFixed="False" Visible="True" DescFieldContextValue="" />
+  </SortDefines>
+  <DefaultCase>
+    <BasicFilters>
+      <BasicFilter id="0d9d4fb9-734b-4910-91fd-569bc9e3f234" name="Code" displayName="编码" description="" help="" />
+      <BasicFilter id="d9d7974d-2ad6-4def-a2f5-d62d35c320d7" name="Name" displayName="名称" description="" help="" />
+    </BasicFilters>
+    <DefaultColumns>
+      <Column id="4b9642db-33dc-4464-95ce-9d841a260271" name="Code" displayName="编码" description="" help="" />
+      <Column id="b4cd9fb4-f2a4-40af-8672-da5f0fed3f39" name="Name" displayName="名称" description="" help="" />
+    </DefaultColumns>
+    <DefaultSorts>
+      <Sort id="4c3a7809-ffb3-4e91-8dce-3aa838d435f7" name="Code" displayName="" description="" help="" SortType="ASC" />
+      <Sort id="74e9b6ba-27a6-4bf0-bf17-78519446ae5b" name="Name" displayName="" description="" help="" SortType="ASC" />
+    </DefaultSorts>
+  </DefaultCase>
+</QueryComponent>
