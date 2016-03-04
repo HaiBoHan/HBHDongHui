@@ -31,7 +31,59 @@
     <WarningLevel>4</WarningLevel>
     <IncrementalBuild>false</IncrementalBuild>
   </PropertyGroup>
-<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />  
-<Import Project="U9.VOB.Cus.HBHDongHui.HBHDongHuiBPwf.target" />  
-
+  <ItemGroup>
+    <Reference Include="HBH.DoNet.DevPlatform.EntityMapping">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.Component\HBHCommon\HBH.DoNet.DevPlatform.EntityMapping.dll</HintPath>
+    </Reference>
+    <Reference Include="HBH.DoNet.DevPlatform.ErpSvProxy">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.Component\HBHCommon\HBH.DoNet.DevPlatform.ErpSvProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="HBH.DoNet.DevPlatform.U9Mapping">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.Component\HBHCommon\HBH.DoNet.DevPlatform.U9Mapping.dll</HintPath>
+    </Reference>
+    <Reference Include="U9.VOB.HBHCommon.U9CommonBE.Deploy">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.Component\HBHCommon\U9.VOB.HBHCommon.U9CommonBE.Deploy.dll</HintPath>
+    </Reference>
+    <Reference Include="U9.VOB.HBHCommon.U9CommonSV.Agent">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.Component\HBHCommon\U9.VOB.HBHCommon.U9CommonSV.Agent.dll</HintPath>
+    </Reference>
+    <Reference Include="U9.VOB.HBHCommon.U9CommonSV.Deploy">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.Component\HBHCommon\U9.VOB.HBHCommon.U9CommonSV.Deploy.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.Base.BaseBE">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.UBF\UBFStudio\Runtime\UFIDA.U9.Base.BaseBE.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.Base.BaseBE.Deploy">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.UBF\UBFStudio\Runtime\UFIDA.U9.Base.BaseBE.Deploy.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.CBO.HRBE">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.Component\App\UFIDA.U9.CBO.HRBE.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.CBO.HRBE.Deploy">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.Component\App\UFIDA.U9.CBO.HRBE.Deploy.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.CBO.PubBE">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.Component\App\UFIDA.U9.CBO.PubBE.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.CBO.PubBE.Deploy">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.Component\App\UFIDA.U9.CBO.PubBE.Deploy.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.CBO.PubBP.Agent">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.Component\App\UFIDA.U9.CBO.PubBP.Agent.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.CBO.PubBP.Deploy">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.Component\App\UFIDA.U9.CBO.PubBP.Deploy.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.CBO.PubSV.Agent">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.Component\App\UFIDA.U9.CBO.PubSV.Agent.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.CBO.PubSV.Deploy">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.Component\App\UFIDA.U9.CBO.PubSV.Deploy.dll</HintPath>
+    </Reference>
+    <Reference Include="UFSoft.UBF.MD">
+      <HintPath>..\..\..\..\..\..\..\UBFV30\U9.VOB.Product.UBF\UBFStudio\Runtime\UFSoft.UBF.MD.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="U9.VOB.Cus.HBHDongHui.HBHDongHuiBPwf.target" />
 </Project>

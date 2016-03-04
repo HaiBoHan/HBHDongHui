@@ -19,6 +19,7 @@ using UFSoft.UBF.UI.ControlModel;
 using UFIDA.UBF.Query.CommonService.QueryStrategy;
 using UFIDA.UBF.Query.CaseModel;
 using UFIDA.U9.UI.PDHelper;
+using HBH.DoNet.DevPlatform.EntityMapping;
 
 
 
@@ -114,6 +115,37 @@ this.OnLoadData_DefaultImpl(sender,e);
         
         private string CustomFilterOpath_Extend(string filterOpath)
         {
+            string addOpath = string.Empty;
+
+            long fromOrg = PubClass.GetLong(this.CurrentPart.NameValues["FromOrg"]);
+
+            if (fromOrg > 0)
+            {
+                addOpath = string.Format("ID not in ({0})"
+                    , fromOrg
+                    );
+            }
+
+            if (!PubClass.IsNull(addOpath))
+            {
+                if (!PubClass.IsNull(filterOpath)
+                    && !filterOpath.Trim().ToLower().StartsWith("order by")
+                    )
+                {
+                    filterOpath = string.Format("({0}) and {1}"
+                        , addOpath
+                        , filterOpath
+                        );
+                }
+                else
+                {
+                    filterOpath = string.Format("{0} {1}"
+                        , addOpath
+                        , filterOpath
+                        );
+                }
+            }
+
             return filterOpath;
         }
         
