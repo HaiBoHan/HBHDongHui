@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using UFIDA.U9.CBO.Pub.Department.DepartmentUIModel;
 using UFSoft.UBF.UI.ControlModel;
 using UFSoft.UBF.UI.WebControlAdapter;
 using UFSoft.UBF.UI.MD.Runtime.Common;
 using UFIDA.U9.UI.PDHelper;
+using UFIDA.U9.CBO.Pub.Operator.OperatorUIModel;
 
 namespace U9.VOB.Cus.HBHDongHui.UIPluginwf
 {
-    public class Dept_UIPlugin : UFSoft.UBF.UI.Custom.ExtendedPartBase
+    public class Operator_UIPlugin : UFSoft.UBF.UI.Custom.ExtendedPartBase
     {
         //UFSoft.UBF.UI.IView.IPart part;
-        DepartmentMainUIFormWebPart _strongPart;
+        OperatorMainUIFormWebPart _strongPart;
 
         //public const string Const_SaleDeptID = "SaleDept259";
         //IUFDataGrid DataGrid10;
@@ -22,7 +22,7 @@ namespace U9.VOB.Cus.HBHDongHui.UIPluginwf
         {
             base.AfterInit(Part, args);
 
-            _strongPart = Part as DepartmentMainUIFormWebPart;
+            _strongPart = Part as OperatorMainUIFormWebPart;
 
             // Card0
             string cardName = "Card0";
@@ -76,13 +76,13 @@ namespace U9.VOB.Cus.HBHDongHui.UIPluginwf
 
             HBHCommon.HBHCommonUI.UICommonHelper.ClearErrorInfo(_strongPart);
 
-            DepartmentRecord focused = _strongPart.Model.Department.FocusedRecord;
+            OperatorsRecord focused = _strongPart.Model.Operators.FocusedRecord;
 
             if (focused != null)
             {
                 NaviteParamter naviteParamter = new NaviteParamter();
                 naviteParamter.NameValues.Add("FromOrg", focused.Org.ToString());
-                naviteParamter.NameValues.Add("EntityType", _strongPart.Model.Department.EntityFullName);
+                naviteParamter.NameValues.Add("EntityType", _strongPart.Model.Operators.EntityFullName);
                 naviteParamter.NameValues.Add("EntityID", focused.ID.ToString());
                 naviteParamter.NameValues.Add("UnIssue", isUnIssue.ToString());
                 NavigateManager.ShowModelWebpart(_strongPart, "a03cdb71-d70b-4cf4-96d2-6ea1e7f28ac7", 410, 370, naviteParamter);
