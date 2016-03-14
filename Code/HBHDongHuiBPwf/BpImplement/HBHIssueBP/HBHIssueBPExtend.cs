@@ -99,12 +99,7 @@
             }
 
             string entityType = bpObj.EntityType;
-            string codeField = "Code";
-            string orgField = "Org";
 
-            Hashtable hs = new Hashtable();
-            hs.Add(codeField, "");
-            hs.Add(orgField, "");
             //UFIDA.U9.CBO.HR.Department.Department dept; dept.ModifiedBy;
             //UFIDA.U9.CBO.HR.Person.Person person;person.EmployeeArchives[0].EmployeeCode;
 
@@ -132,6 +127,23 @@
 
                                         if (entity != null)
                                         {
+                                            string codeField = "Code";
+                                            string orgField = "Org";
+                                            
+                                            if (entityType == typeof(Person).FullName)
+                                            {
+                                                codeField = "PersonID";
+                                                orgField = "CreateOrg";
+                                            }
+                                            //else
+                                            //{
+                                            //    businessEntity2.SetValue("Org", org);
+                                            //}
+
+                                            Hashtable hs = new Hashtable();
+                                            hs.Add(codeField, "");
+                                            hs.Add(orgField, "");
+
                                             hs[codeField] = entity.GetValue(codeField);
                                             hs[orgField] = org;
 
@@ -181,6 +193,8 @@
                                                 //person1.LabourContractOrg = OrgTypeEnum.HROrg;
                                                 //person1.PayOrg = OrgTypeEnum.HROrg;
                                                 //person1.HRChangeOrg = OrgTypeEnum.HROrg;
+
+                                                person2.LinkMan = null;
 
                                                 CreatePersonChild(person1, person2);
                                             }
