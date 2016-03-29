@@ -38,7 +38,7 @@ namespace U9.VOB.Cus.HBHDongHui.UIPluginwf
 
                 //加入Card容器
                 card0.Controls.Add(hbh_btnIssue);
-                HBHCommon.HBHCommonUI.UICommonHelper.Layout(card0, hbh_btnIssue, 2, 0);
+                HBHCommon.HBHCommonUI.UICommonHelper.Layout(card0, hbh_btnIssue, 4, 0);
             }
 
 
@@ -52,7 +52,7 @@ namespace U9.VOB.Cus.HBHDongHui.UIPluginwf
 
             //    //加入Card容器
             //    card0.Controls.Add(hbh_btnUnIssue);
-            //    HBHCommon.HBHCommonUI.UICommonHelper.Layout(card0, hbh_btnUnIssue, 4, 0);
+            //    HBHCommon.HBHCommonUI.UICommonHelper.Layout(card0, hbh_btnUnIssue, 6, 0);
             //}
         }
 
@@ -83,8 +83,9 @@ namespace U9.VOB.Cus.HBHDongHui.UIPluginwf
                 NaviteParamter naviteParamter = new NaviteParamter();
                 naviteParamter.NameValues.Add("FromOrg", focused.Org.ToString());
                 naviteParamter.NameValues.Add("EntityType", _strongPart.Model.Department.EntityFullName);
-                naviteParamter.NameValues.Add("EntityID", focused.ID.ToString());
                 naviteParamter.NameValues.Add("UnIssue", isUnIssue.ToString());
+                //naviteParamter.NameValues.Add("EntityID", focused.ID.ToString());
+                this._strongPart.CurrentState["HBH_DongHui_EntityIDs"] = new List<long>() { focused.ID };
                 NavigateManager.ShowModelWebpart(_strongPart, "a03cdb71-d70b-4cf4-96d2-6ea1e7f28ac7", 410, 370, naviteParamter);
             }
             else

@@ -93,13 +93,21 @@ namespace OrgUIListBListUIModel
                     proxy.EntityType = objEntityType.ToString();
                 }
 
-                proxy.EntityIDs = new List<long>();
-                long entityID = PubClass.GetLong(this.NameValues["EntityID"]);
-                if (entityID > 0)
-                {
-                    proxy.EntityIDs.Add(entityID);
-                }
-                else
+                proxy.EntityIDs = this.CurrentState["HBH_DongHui_EntityIDs"] as List<long>;
+                //proxy.EntityIDs = new List<long>();
+                //long entityID = PubClass.GetLong(this.NameValues["EntityID"]);
+                //if (entityID > 0)
+                //{
+                //    proxy.EntityIDs.Add(entityID);
+                //}
+                //else
+                //{
+                //    U9.VOB.HBHCommon.HBHCommonUI.UICommonHelper.ShowErrorInfo(this, "实体ID不可为空!");
+                //    return;
+                //}
+                if (proxy.EntityIDs == null
+                    || proxy.EntityIDs.Count == 0
+                    )
                 {
                     U9.VOB.HBHCommon.HBHCommonUI.UICommonHelper.ShowErrorInfo(this, "实体ID不可为空!");
                     return;

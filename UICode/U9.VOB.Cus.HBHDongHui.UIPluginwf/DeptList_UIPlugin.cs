@@ -6,14 +6,14 @@ using UFSoft.UBF.UI.ControlModel;
 using UFSoft.UBF.UI.WebControlAdapter;
 using UFSoft.UBF.UI.MD.Runtime.Common;
 using UFIDA.U9.UI.PDHelper;
-using UFIDA.U9.CBO.HR.EmployInfoUIModel;
+using UFIDA.U9.CBO.Pub.Department.DepartmentListUIModel;
 
 namespace U9.VOB.Cus.HBHDongHui.UIPluginwf
 {
-    public class PersonInfo_UIPlugin : UFSoft.UBF.UI.Custom.ExtendedPartBase
+    public class DeptList_UIPlugin : UFSoft.UBF.UI.Custom.ExtendedPartBase
     {
         //UFSoft.UBF.UI.IView.IPart part;
-        EmployInfoUIFormWebPart _strongPart;
+        DepartmentListUIFormWebPart _strongPart;
 
         //public const string Const_SaleDeptID = "SaleDept259";
         //IUFDataGrid DataGrid10;
@@ -22,7 +22,7 @@ namespace U9.VOB.Cus.HBHDongHui.UIPluginwf
         {
             base.AfterInit(Part, args);
 
-            _strongPart = Part as EmployInfoUIFormWebPart;
+            _strongPart = Part as DepartmentListUIFormWebPart;
 
             // Card0
             string cardName = "Card0";
@@ -38,7 +38,7 @@ namespace U9.VOB.Cus.HBHDongHui.UIPluginwf
 
                 //加入Card容器
                 card0.Controls.Add(hbh_btnIssue);
-                HBHCommon.HBHCommonUI.UICommonHelper.Layout(card0, hbh_btnIssue, 6, 0);
+                HBHCommon.HBHCommonUI.UICommonHelper.Layout(card0, hbh_btnIssue, 4, 0);
             }
 
 
@@ -52,7 +52,7 @@ namespace U9.VOB.Cus.HBHDongHui.UIPluginwf
 
             //    //加入Card容器
             //    card0.Controls.Add(hbh_btnUnIssue);
-            //    HBHCommon.HBHCommonUI.UICommonHelper.Layout(card0, hbh_btnUnIssue, 8, 0);
+            //    HBHCommon.HBHCommonUI.UICommonHelper.Layout(card0, hbh_btnUnIssue, 6, 0);
             //}
         }
 
@@ -76,16 +76,19 @@ namespace U9.VOB.Cus.HBHDongHui.UIPluginwf
 
             HBHCommon.HBHCommonUI.UICommonHelper.ClearErrorInfo(_strongPart);
 
-            PersonRecord focused = _strongPart.Model.Person.FocusedRecord;
+            //DepartmentRecord focused = _strongPart.Model.Department.FocusedRecord;
+            long[] selectDepts = _strongPart.Model.Department.GetSelectedRecordIDs();
 
-            if (focused != null)
+            if (selectDepts != null
+                && selectDepts.Length > 0
+                )
             {
                 NaviteParamter naviteParamter = new NaviteParamter();
-                naviteParamter.NameValues.Add("FromOrg", focused.AttachOrg.GetValueOrDefault(-1).ToString());
-                naviteParamter.NameValues.Add("EntityType", _strongPart.Model.Person.EntityFullName);
+                naviteParamter.NameValues.Add("FromOrg", UFIDA.U9.UI.PDHelper.PDContext.Current.OrgID);
+                naviteParamter.NameValues.Add("EntityType", _strongPart.Model.Department.EntityFullName);
                 naviteParamter.NameValues.Add("UnIssue", isUnIssue.ToString());
                 //naviteParamter.NameValues.Add("EntityID", focused.ID.ToString());
-                this._strongPart.CurrentState["HBH_DongHui_EntityIDs"] = new List<long>() { focused.ID };
+                this._strongPart.CurrentState["HBH_DongHui_EntityIDs"] = selectDepts.ToList();
                 NavigateManager.ShowModelWebpart(_strongPart, "a03cdb71-d70b-4cf4-96d2-6ea1e7f28ac7", 410, 370, naviteParamter);
             }
             else
@@ -93,6 +96,5 @@ namespace U9.VOB.Cus.HBHDongHui.UIPluginwf
                 HBHCommon.HBHCommonUI.UICommonHelper.ShowErrorInfo(_strongPart, "必须指定下发实体!");
             }
         }
-
     }
 }
