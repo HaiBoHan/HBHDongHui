@@ -3,26 +3,30 @@
 
 insert into DHERP..Base_Organization_Trl
 select *
-from SHERP..Base_Organization_Trl
+from LJ..Base_Organization_Trl
 where ID in (select shOrg.ID
-			from SHERP..Base_Organization shOrg
+			from LJ..Base_Organization shOrg
 			where ID not in (select dh.ID from DHERP..Base_Organization dh)
 				and Code not in (select dh.Code from DHERP..Base_Organization dh)
-
+				and ID not in (select dh.ID from DHERP..Base_Organization_Trl dh)
 		)
 
 
 
 insert into DHERP..Base_Organization
 select *
-from SHERP..Base_Organization
+from LJ..Base_Organization
 where ID not in (select dh.ID from DHERP..Base_Organization dh)
 	and Code not in (select dh.Code from DHERP..Base_Organization dh)
 
 
+
+
+
+
 --insert into DHERP..Base_Organization_Trl
 --select *
---from SHERP..Base_Organization_Trl
+--from LJ..Base_Organization_Trl
 --where ID not in (select dh.ID from DHERP..Base_Organization_Trl dh)
 
 
@@ -38,13 +42,34 @@ where ID not in (select dh.ID from DHERP..Base_Organization dh)
 --	,dh.CreatedOn
 --	,sh.Code
 --	,dh.Code
---from SHERP..Base_Organization sh
+--from LJ..Base_Organization sh
 --	left join DHERP..Base_Organization dh
 --	on sh.Code = dh.Code
 --where 
 --	sh.ID not in (select dh2.ID from DHERP..Base_Organization dh2)
 --	and dh.ID is not null
 
+
+/*	-- ±¸·Ý±í
+
+select *
+into DHERP..Base_Organization_tmp_20160418
+from DHERP..Base_Organization
+-- order by CreatedOn desc
+
+select *
+into DHERP..Base_Organization_Trl_tmp_20160418
+from DHERP..Base_Organization_Trl
+
+select *
+into LJ..Base_Organization_tmp_20160418
+from LJ..Base_Organization
+
+select *
+into LJ..Base_Organization_Trl_tmp_20160418
+from LJ..Base_Organization_Trl
+
+*/
 
 
 
@@ -66,13 +91,13 @@ from DHERP..Base_Organization_Trl
 
 
 select *
--- into SHERP..Base_Organization_tmp_20160418
-from SHERP..Base_Organization
+-- into LJ..Base_Organization_tmp_20160418
+from LJ..Base_Organization
 -- order by CreatedOn desc
 
 select *
--- into SHERP..Base_Organization_Trl_tmp_20160418
-from SHERP..Base_Organization_Trl
+-- into LJ..Base_Organization_Trl_tmp_20160418
+from LJ..Base_Organization_Trl
 
 
 
