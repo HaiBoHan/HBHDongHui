@@ -15,6 +15,8 @@ namespace U9.VOB.Cus.HBHDongHui.UIPluginwf
         //UFSoft.UBF.UI.IView.IPart part;
         UnifyTaskBListUIFormWebPart _strongPart;
 
+        IUFMenu btnRelegate;
+
         //public const string Const_SaleDeptID = "SaleDept259";
         //IUFDataGrid DataGrid10;
         //IUFFldReferenceColumn itemRef;
@@ -54,23 +56,64 @@ namespace U9.VOB.Cus.HBHDongHui.UIPluginwf
             //    card0.Controls.Add(hbh_btnUnIssue);
             //    HBHCommon.HBHCommonUI.UICommonHelper.Layout(card0, hbh_btnUnIssue, 6, 0);
             //}
-        }
-
-        public override void AfterRender(UFSoft.UBF.UI.IView.IPart Part, EventArgs args)
-        {
-            base.AfterRender(Part, args);
-
 
             // Card0
             string cardName = "Card0";
             IUFCard card0 = (IUFCard)_strongPart.GetUFControlByName(_strongPart.TopLevelContainer, cardName);
             // MenuRelegate
-            string btnName = "MenuRelegate";
-            IUFMenu btnRelegate = (IUFMenu)_strongPart.GetUFControlByName(card0, btnName);
+            string strOperation = "DDBtnOperation";
+            string strRelegate = "MenuRelegate";
+            IUFDropDownButton btnOperation = (IUFDropDownButton)_strongPart.GetUFControlByName(card0, strOperation);
+            //IUFMenu btnRelegate = (IUFMenu)_strongPart.GetUFControlByName(btnOperation.MenuItems, strRelegate);
+            //if (btnRelegate != null)
+            //{
+            //    btnRelegate.Enabled = false;
+            //}
+
+            if (btnOperation != null
+                && btnOperation.MenuItems != null
+                )
+            {
+                UFWebMenuCollectionAdapter menus = btnOperation.MenuItems as UFWebMenuCollectionAdapter;
+                if (menus != null)
+                {
+                    //foreach (IUFMenu menu in menus)
+                    for (int i = 0; i < menus.Count; i++)
+                    {
+                        IUFMenu menu = btnOperation.MenuItems[i];
+
+                        if (menu != null)
+                        {
+                            if (menu.ID == strRelegate)
+                            {
+                                btnRelegate = menu;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //public override void AfterEventProcess(UFSoft.UBF.UI.IView.IPart Part, string eventName, object sender, EventArgs args)
+        //{
+        //    base.AfterEventProcess(Part, eventName, sender, args);
+
+        //    if (btnRelegate != null)
+        //    {
+        //        btnRelegate.Enabled = false;
+        //        btnRelegate.Visible = false;
+        //    }
+        //}
+
+        public override void AfterRender(UFSoft.UBF.UI.IView.IPart Part, EventArgs args)
+        {
+            base.AfterRender(Part, args);
 
             if (btnRelegate != null)
             {
                 btnRelegate.Enabled = false;
+                btnRelegate.Visible = false;
             }
         }
     }
