@@ -34,7 +34,9 @@
 	/// 
 	/// </summary>	
 	internal partial class HBHIssueBPImpementStrategy : BaseStrategy
-	{
+    {
+        string personEntityFullName = typeof(Person).FullName;
+        string entityType = string.Empty;
 
         private List<string> sysFields;
 
@@ -98,7 +100,7 @@
                 throw new BusinessException("没有实现取消下发。");
             }
 
-            string entityType = bpObj.EntityType;
+            entityType = bpObj.EntityType;
 
             //UFIDA.U9.CBO.HR.Department.Department dept; dept.ModifiedBy;
             //UFIDA.U9.CBO.HR.Person.Person person;person.EmployeeArchives[0].EmployeeCode;
@@ -129,8 +131,8 @@
                                         {
                                             string codeField = "Code";
                                             string orgField = "Org";
-                                            
-                                            if (entityType == typeof(Person).FullName)
+
+                                            if (entityType == personEntityFullName)
                                             {
                                                 codeField = "PersonID";
                                                 orgField = "CreateOrg";
@@ -144,8 +146,36 @@
                                             hs.Add(codeField, "");
                                             hs.Add(orgField, "");
 
-                                            hs[codeField] = entity.GetValue(codeField);
                                             hs[orgField] = org;
+                                            //hs[codeField] = GetEntityCode(entity, codeField);
+                                            {
+                                                object code = entity.GetValue(codeField);
+
+                                                if (entityType == personEntityFullName)
+                                                {
+                                                    string strPersonID = code.GetString();
+                                                    string newOrgCode = current.Code;
+
+                                                    long oldOrgID = entity.GetValue(orgField).GetLong();
+
+                                                    if (oldOrgID > 0)
+                                                    {
+                                                        Organization oldOrg = Organization.Finder.FindByID(oldOrgID);
+                                                        if (oldOrg != null)
+                                                        {
+                                                            string oldOrgCode = oldOrg.Code;
+
+                                                            strPersonID = newOrgCode + strPersonID.Replace(oldOrgCode, "");
+                                                        }
+                                                    }
+
+                                                    hs[codeField] = strPersonID;
+                                                }
+                                                else
+                                                {
+                                                    hs[codeField] = code;
+                                                }
+                                            }
 
                                             //BusinessEntity targetEntity = BusinessEntity.
                                             //entity.CopyTo(
@@ -158,7 +188,7 @@
                                             {
                                                 throw new CodeExsitsException(entity.MDEntity.DisplayName, (string)entity.GetValue(codeField), current.Name);
                                             }
-                                            businessEntity2 = (BusinessEntity)Entity.Create(entityType, null);
+                                            businessEntity2 = (BusinessEntity)UFSoft.UBF.Business.Entity.Create(entityType, null);
 
 
                                             //Dictionary<string, object> dicValues = new Dictionary<string, object>();
@@ -182,7 +212,7 @@
 
                                             //businessEntity2.SetValue("MasterOrg", entity.GetValue("Org"));
 
-                                            if (entityType == typeof(Person).FullName)
+                                            if (entityType == personEntityFullName)
                                             {
                                                 Person person1 = (Person)entity;
                                                 Person person2 = (Person)businessEntity2;
@@ -235,7 +265,6 @@
             }
             return null;
 		}
-
 
         private void CreatePersonChild(Person person1, Person person2)
         {
